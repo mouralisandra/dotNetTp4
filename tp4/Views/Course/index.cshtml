@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model IEnumerable<String>
+
+}
+
+<div style="
+                width: 100%;
+                display: flex;
+justify-content: space-evenly;
+align-items:center;
+                ">
+    @{
+        foreach (String s in Model)
+        {
+            <a href="Course/getcourse/@s">
+                <div style="
+                    font-weight:bold;
+                    padding: 3vw;
+                    font-size:3ch;
+                            ">
+                    @s
+                </div>
+            </a>
+        }
+    }
+</div>
+

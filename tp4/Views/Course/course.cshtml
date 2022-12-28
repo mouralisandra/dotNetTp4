@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model IEnumerable<Student>
+
+}
+
+
+@{
+    if (Model.Count() <= 0)
+    {
+        <h2 class="alert alert-warning">There is no Student studying this course please verify your infos </h2>
+    }
+    else
+
+    {
+        <h1>@ViewBag.Id</h1>
+        <div style="
+    width: 100%;
+    display: grid;
+    justify-content: start;
+    align-items:center;">
+
+            @foreach (Student s in Model)
+            {
+                <div style="
+                            padding: 3vw;
+                            font-size:2ch;
+                        ">
+                    @s.first_name
+                </div>
+
+            }
+
+        </div>
+    }
+
+
+}
+
+
+<a asp-controller="Course" asp-action="index"> GO BACK TO ALL COURSES</a>
